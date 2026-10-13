@@ -13,35 +13,31 @@ const categories = [
     name: "Hot Drinks",
     items: [
       ["Espresso", "3,000", "/menu/hot-espresso.jpg"], ["Double Espresso", "4,000", "/menu/hot-espresso.jpg"],
-      ["Latte", "4,000", "/menu/hot-latte.jpg"], ["Caramel Latte", "4,500", "/menu/hot-latte.jpg"],
-      ["Vanilla Latte", "4,500", "/menu/hot-latte.jpg"], ["Mocha", "4,500", "/menu/hot-drinks.jpg"],
-      ["Spanish Latte", "4,500", "/menu/hot-latte.jpg"], ["Cappuccino", "4,000", "/menu/hot-latte.jpg"],
-      ["Americano", "3,500", "/menu/hot-drinks.jpg"], ["Hot Chocolate", "4,000", "/menu/shake-chocolate.jpg"],
-      ["Turkish Coffee", "2,000", "/menu/hot-drinks.jpg"], ["Arabic Coffee", "2,000", "/menu/hot-drinks.jpg"],
-      ["Chocolate Coffee", "2,000", "/menu/shake-chocolate.jpg"], ["Qazwan", "2,000", "/menu/hot-drinks.jpg"],
-      ["Hazelnut Coffee", "2,000", "/menu/hot-drinks.jpg"], ["Cappuccino Powder", "2,000", "/menu/hot-latte.jpg"],
-      ["Nescafe", "1,000", "/menu/hot-drinks.jpg"], ["Tea", "500", "/menu/hot-drinks.jpg"],
-      ["Double Tea", "1,000", "/menu/hot-drinks.jpg"],
+      ["Latte", "4,000", "/menu/hot-latte.jpg"], ["Caramel Latte", "4,500"],
+      ["Vanilla Latte", "4,500"], ["Mocha", "4,500"], ["Spanish Latte", "4,500"],
+      ["Cappuccino", "4,000", "/menu/hot-latte.jpg"], ["Americano", "3,500"],
+      ["Hot Chocolate", "4,000"], ["Turkish Coffee", "2,000"], ["Arabic Coffee", "2,000"],
+      ["Chocolate Coffee", "2,000"], ["Qazwan", "2,000"], ["Hazelnut Coffee", "2,000"],
+      ["Cappuccino Powder", "2,000"], ["Nescafe", "1,000"], ["Tea", "500"], ["Double Tea", "1,000"],
     ],
   },
   {
     name: "Cold Drinks",
     items: [
-      ["Iced Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Caramel Latte", "5,000", "/menu/cold-iced-latte.jpg"],
-      ["Iced Vanilla Latte", "5,000", "/menu/cold-iced-latte.jpg"], ["Iced Coffee", "4,000", "/menu/cold-iced-coffee.jpg"],
-      ["Iced Coffee Caramel", "4,500", "/menu/cold-iced-coffee-alt.jpg"], ["Iced Coffee Vanilla", "4,500", "/menu/cold-iced-coffee.jpg"],
-      ["Iced Spanish Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Mocha", "4,500", "/menu/cold-iced-coffee-alt.jpg"],
-      ["Iced Americano", "5,000", "/menu/cold-iced-coffee.jpg"],
+      ["Iced Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Caramel Latte", "5,000"],
+      ["Iced Vanilla Latte", "5,000"], ["Iced Coffee", "4,000", "/menu/cold-iced-coffee.jpg"],
+      ["Iced Coffee Caramel", "4,500"], ["Iced Coffee Vanilla", "4,500"],
+      ["Iced Spanish Latte", "4,500"], ["Iced Mocha", "4,500"], ["Iced Americano", "5,000"],
     ],
   },
   {
     name: "Shakes",
     items: [
-      ["Nutella Shake", "4,000", "/menu/shake-chocolate.jpg"], ["Chocolate Shake", "3,500", "/menu/shake-chocolate.jpg"],
-      ["Kinder Shake", "5,000", "/menu/shake-chocolate.jpg"], ["Oreo Shake", "4,000", "/menu/shake-chocolate.jpg"],
+      ["Nutella Shake", "4,000"], ["Chocolate Shake", "3,500", "/menu/shake-chocolate.jpg"],
+      ["Kinder Shake", "5,000"], ["Oreo Shake", "4,000", "/menu/shake-oreo.jpg"],
       ["Strawberry Shake", "4,000", "/menu/shake-strawberry.jpg"],
-      ["Nutella Banana Milkshake", "5,000", "/menu/shake-chocolate.jpg"],
-      ["Strawberry Banana Milkshake", "5,000", "/menu/shake-strawberry.jpg"],
+      ["Nutella Banana Milkshake", "5,000"],
+      ["Strawberry Banana Milkshake", "5,000", "/menu/shake-strawberry-banana.jpg"],
     ],
   },
   {
@@ -54,8 +50,8 @@ const categories = [
   {
     name: "Crep",
     items: [
-      ["Crep Nutella", "5,000", "/menu/crepes-chocolate.jpg"], ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
-      ["Crep Pistachio", "6,000", "/menu/crepes.jpg"], ["Crep Kinder", "6,000", "/menu/crepes-chocolate.jpg"],
+      ["Crep Nutella", "5,000"], ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
+      ["Crep Pistachio", "6,000"], ["Crep Kinder", "6,000"],
     ],
   },
   {
@@ -295,11 +291,13 @@ export default function HomePage() {
                 <div className="menu-grid">
                   {visibleItems.map(([itemName, price, image]) => (
                     <article className="menu-card" key={itemName}>
-                      <img
-                        className="menu-image"
-                        src={image}
-                        alt={`${itemName} - ${name}`}
-                      />
+                      {image ? (
+                        <img className="menu-image" src={image} alt={`${itemName} - ${name}`} />
+                      ) : (
+                        <div className="menu-image-missing" role="img" aria-label={`${itemName} photo not available`}>
+                          Photo coming soon
+                        </div>
+                      )}
                       <h2>{itemName}</h2>
                       <p>{price} <span>IQD</span></p>
                     </article>

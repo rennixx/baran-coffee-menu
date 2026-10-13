@@ -482,6 +482,20 @@ button {
   box-shadow: 0 0.8rem 1.5rem rgb(59 41 33 / 9%);
 }
 
+.menu-image-missing {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.2;
+  padding: 1rem;
+  color: var(--muted);
+  background: var(--cream-deep);
+  border: 1px dashed rgb(59 41 33 / 22%);
+  border-radius: 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .empty-state {
   color: var(--muted);
 }
