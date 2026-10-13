@@ -55,7 +55,12 @@ const categories = [
   },
   {
     name: "Mojito",
-    images: ["/menu/mojito.jpg", "/menu/mojito-alt.jpg"],
+    images: [
+      "/menu/mojito-classic.jpg",
+      "/menu/mojito-strawberry.jpg",
+      "/menu/mojito-blueberry.jpg",
+      "/menu/mojito-lemon-mint.jpg",
+    ],
     items: [
       ["Classic Mojito", "4,000"], ["Strawberry Mojito", "4,000"],
       ["Blueberry Mojito", "4,000"], ["Lemon and Mint", "3,500"],
@@ -77,9 +82,10 @@ const categories = [
     name: "Juice",
     images: [
       "/menu/juice-orange.jpg",
-      "/menu/juice-fruit.jpg",
-      "/menu/juice-citrus.jpg",
-      "/menu/juice.jpg",
+      "/menu/juice-pomegranate.jpg",
+      "/menu/juice-banana.jpg",
+      "/menu/juice-melon.jpg",
+      "/menu/juice-cocktail.jpg",
     ],
     items: [
       ["Orange Juice", "—"], ["Pomegranate Juice", "—"], ["Milk and Banana", "—"],
