@@ -11,7 +11,11 @@ const languages = [
 const categories = [
   {
     name: "Hot Drinks",
-    image: "/menu/hot-drinks.jpg",
+    images: [
+      "/menu/hot-espresso.jpg",
+      "/menu/hot-latte.jpg",
+      "/menu/hot-drinks.jpg",
+    ],
     items: [
       ["Espresso", "3,000"], ["Double Espresso", "4,000"], ["Latte", "4,000"],
       ["Caramel Latte", "4,500"], ["Vanilla Latte", "4,500"], ["Mocha", "4,500"],
@@ -24,7 +28,11 @@ const categories = [
   },
   {
     name: "Cold Drinks",
-    image: "/menu/cold-drinks.jpg",
+    images: [
+      "/menu/cold-iced-latte.jpg",
+      "/menu/cold-iced-coffee.jpg",
+      "/menu/cold-iced-coffee-alt.jpg",
+    ],
     items: [
       ["Iced Latte", "4,500"], ["Iced Caramel Latte", "5,000"], ["Iced Vanilla Latte", "5,000"],
       ["Iced Coffee", "4,000"], ["Iced Coffee Caramel", "4,500"], ["Iced Coffee Vanilla", "4,500"],
@@ -33,7 +41,12 @@ const categories = [
   },
   {
     name: "Shakes",
-    image: "/menu/shakes.jpg",
+    images: [
+      "/menu/shake-chocolate.jpg",
+      "/menu/shake-strawberry.jpg",
+      "/menu/shake-vanilla.jpg",
+      "/menu/shakes.jpg",
+    ],
     items: [
       ["Nutella Shake", "4,000"], ["Chocolate Shake", "3,500"], ["Kinder Shake", "5,000"],
       ["Oreo Shake", "4,000"], ["Strawberry Shake", "4,000"],
@@ -42,7 +55,7 @@ const categories = [
   },
   {
     name: "Mojito",
-    image: "/menu/mojito.jpg",
+    images: ["/menu/mojito.jpg", "/menu/mojito-alt.jpg"],
     items: [
       ["Classic Mojito", "4,000"], ["Strawberry Mojito", "4,000"],
       ["Blueberry Mojito", "4,000"], ["Lemon and Mint", "3,500"],
@@ -50,7 +63,11 @@ const categories = [
   },
   {
     name: "Crep",
-    image: "/menu/crepes.jpg",
+    images: [
+      "/menu/crepes-chocolate.jpg",
+      "/menu/crepes-berries.jpg",
+      "/menu/crepes.jpg",
+    ],
     items: [
       ["Crep Nutella", "5,000"], ["Crep Fruits", "6,000"],
       ["Crep Pistachio", "6,000"], ["Crep Kinder", "6,000"],
@@ -58,7 +75,12 @@ const categories = [
   },
   {
     name: "Juice",
-    image: "/menu/juice.jpg",
+    images: [
+      "/menu/juice-orange.jpg",
+      "/menu/juice-fruit.jpg",
+      "/menu/juice-citrus.jpg",
+      "/menu/juice.jpg",
+    ],
     items: [
       ["Orange Juice", "—"], ["Pomegranate Juice", "—"], ["Milk and Banana", "—"],
       ["Melon Juice", "—"], ["Cocktail", "—"],
@@ -276,7 +298,7 @@ export default function HomePage() {
         </div>
 
         <div className="menu-content">
-          {categories.map(({ name, image, items }) => {
+          {categories.map(({ name, images, items }) => {
             const visibleItems = items.filter(([itemName]) =>
               itemName.toLowerCase().includes(search.toLowerCase()),
             );
@@ -293,7 +315,11 @@ export default function HomePage() {
                 <div className="menu-grid">
                   {visibleItems.map(([itemName, price], index) => (
                     <article className="menu-card" key={itemName}>
-                      <img className="menu-image" src={image} alt={`${itemName} - ${name}`} />
+                      <img
+                        className="menu-image"
+                        src={images[index % images.length]}
+                        alt={`${itemName} - ${name}`}
+                      />
                       <h2>{itemName}</h2>
                       <p>{price} <span>IQD</span></p>
                     </article>
