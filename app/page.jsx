@@ -11,85 +11,59 @@ const languages = [
 const categories = [
   {
     name: "Hot Drinks",
-    images: [
-      "/menu/hot-espresso.jpg",
-      "/menu/hot-latte.jpg",
-      "/menu/hot-drinks.jpg",
-    ],
     items: [
-      ["Espresso", "3,000"], ["Double Espresso", "4,000"], ["Latte", "4,000"],
-      ["Caramel Latte", "4,500"], ["Vanilla Latte", "4,500"], ["Mocha", "4,500"],
-      ["Spanish Latte", "4,500"], ["Cappuccino", "4,000"], ["Americano", "3,500"],
-      ["Hot Chocolate", "4,000"], ["Turkish Coffee", "2,000"],
-      ["Arabic Coffee", "2,000"], ["Chocolate Coffee", "2,000"], ["Qazwan", "2,000"],
-      ["Hazelnut Coffee", "2,000"], ["Cappuccino Powder", "2,000"], ["Nescafe", "1,000"],
-      ["Tea", "500"], ["Double Tea", "1,000"],
+      ["Espresso", "3,000", "/menu/hot-espresso.jpg"], ["Double Espresso", "4,000", "/menu/hot-espresso.jpg"],
+      ["Latte", "4,000", "/menu/hot-latte.jpg"], ["Caramel Latte", "4,500", "/menu/hot-latte.jpg"],
+      ["Vanilla Latte", "4,500", "/menu/hot-latte.jpg"], ["Mocha", "4,500", "/menu/hot-drinks.jpg"],
+      ["Spanish Latte", "4,500", "/menu/hot-latte.jpg"], ["Cappuccino", "4,000", "/menu/hot-latte.jpg"],
+      ["Americano", "3,500", "/menu/hot-drinks.jpg"], ["Hot Chocolate", "4,000", "/menu/shake-chocolate.jpg"],
+      ["Turkish Coffee", "2,000", "/menu/hot-drinks.jpg"], ["Arabic Coffee", "2,000", "/menu/hot-drinks.jpg"],
+      ["Chocolate Coffee", "2,000", "/menu/shake-chocolate.jpg"], ["Qazwan", "2,000", "/menu/hot-drinks.jpg"],
+      ["Hazelnut Coffee", "2,000", "/menu/hot-drinks.jpg"], ["Cappuccino Powder", "2,000", "/menu/hot-latte.jpg"],
+      ["Nescafe", "1,000", "/menu/hot-drinks.jpg"], ["Tea", "500", "/menu/hot-drinks.jpg"],
+      ["Double Tea", "1,000", "/menu/hot-drinks.jpg"],
     ],
   },
   {
     name: "Cold Drinks",
-    images: [
-      "/menu/cold-iced-latte.jpg",
-      "/menu/cold-iced-coffee.jpg",
-      "/menu/cold-iced-coffee-alt.jpg",
-    ],
     items: [
-      ["Iced Latte", "4,500"], ["Iced Caramel Latte", "5,000"], ["Iced Vanilla Latte", "5,000"],
-      ["Iced Coffee", "4,000"], ["Iced Coffee Caramel", "4,500"], ["Iced Coffee Vanilla", "4,500"],
-      ["Iced Spanish Latte", "4,500"], ["Iced Mocha", "4,500"], ["Iced Americano", "5,000"],
+      ["Iced Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Caramel Latte", "5,000", "/menu/cold-iced-latte.jpg"],
+      ["Iced Vanilla Latte", "5,000", "/menu/cold-iced-latte.jpg"], ["Iced Coffee", "4,000", "/menu/cold-iced-coffee.jpg"],
+      ["Iced Coffee Caramel", "4,500", "/menu/cold-iced-coffee-alt.jpg"], ["Iced Coffee Vanilla", "4,500", "/menu/cold-iced-coffee.jpg"],
+      ["Iced Spanish Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Mocha", "4,500", "/menu/cold-iced-coffee-alt.jpg"],
+      ["Iced Americano", "5,000", "/menu/cold-iced-coffee.jpg"],
     ],
   },
   {
     name: "Shakes",
-    images: [
-      "/menu/shake-chocolate.jpg",
-      "/menu/shake-strawberry.jpg",
-      "/menu/shake-vanilla.jpg",
-      "/menu/shakes.jpg",
-    ],
     items: [
-      ["Nutella Shake", "4,000"], ["Chocolate Shake", "3,500"], ["Kinder Shake", "5,000"],
-      ["Oreo Shake", "4,000"], ["Strawberry Shake", "4,000"],
-      ["Nutella Banana Milkshake", "5,000"], ["Strawberry Banana Milkshake", "5,000"],
+      ["Nutella Shake", "4,000", "/menu/shake-chocolate.jpg"], ["Chocolate Shake", "3,500", "/menu/shake-chocolate.jpg"],
+      ["Kinder Shake", "5,000", "/menu/shake-chocolate.jpg"], ["Oreo Shake", "4,000", "/menu/shake-chocolate.jpg"],
+      ["Strawberry Shake", "4,000", "/menu/shake-strawberry.jpg"],
+      ["Nutella Banana Milkshake", "5,000", "/menu/shake-chocolate.jpg"],
+      ["Strawberry Banana Milkshake", "5,000", "/menu/shake-strawberry.jpg"],
     ],
   },
   {
     name: "Mojito",
-    images: [
-      "/menu/mojito-classic.jpg",
-      "/menu/mojito-strawberry.jpg",
-      "/menu/mojito-blueberry.jpg",
-      "/menu/mojito-lemon-mint.jpg",
-    ],
     items: [
-      ["Classic Mojito", "4,000"], ["Strawberry Mojito", "4,000"],
-      ["Blueberry Mojito", "4,000"], ["Lemon and Mint", "3,500"],
+      ["Classic Mojito", "4,000", "/menu/mojito-classic.jpg"], ["Strawberry Mojito", "4,000", "/menu/mojito-strawberry.jpg"],
+      ["Blueberry Mojito", "4,000", "/menu/mojito-blueberry.jpg"], ["Lemon and Mint", "3,500", "/menu/mojito-lemon-mint.jpg"],
     ],
   },
   {
     name: "Crep",
-    images: [
-      "/menu/crepes-chocolate.jpg",
-      "/menu/crepes-berries.jpg",
-      "/menu/crepes.jpg",
-    ],
     items: [
-      ["Crep Nutella", "5,000"], ["Crep Fruits", "6,000"],
-      ["Crep Pistachio", "6,000"], ["Crep Kinder", "6,000"],
+      ["Crep Nutella", "5,000", "/menu/crepes-chocolate.jpg"], ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
+      ["Crep Pistachio", "6,000", "/menu/crepes.jpg"], ["Crep Kinder", "6,000", "/menu/crepes-chocolate.jpg"],
     ],
   },
   {
     name: "Juice",
-    images: [
-      "/menu/juice-orange.jpg",
-      "/menu/juice-pomegranate.jpg",
-      "/menu/juice-banana.jpg",
-      "/menu/juice-melon.jpg",
-      "/menu/juice-cocktail.jpg",
-    ],
     items: [
-      ["Orange Juice", "—"], ["Pomegranate Juice", "—"], ["Milk and Banana", "—"],
-      ["Melon Juice", "—"], ["Cocktail", "—"],
+      ["Orange Juice", "—", "/menu/juice-orange.jpg"], ["Pomegranate Juice", "—", "/menu/juice-pomegranate.jpg"],
+      ["Milk and Banana", "—", "/menu/juice-banana.jpg"], ["Melon Juice", "—", "/menu/juice-melon.jpg"],
+      ["Cocktail", "—", "/menu/juice-cocktail.jpg"],
     ],
   },
 ];
@@ -304,7 +278,7 @@ export default function HomePage() {
         </div>
 
         <div className="menu-content">
-          {categories.map(({ name, images, items }) => {
+          {categories.map(({ name, items }) => {
             const visibleItems = items.filter(([itemName]) =>
               itemName.toLowerCase().includes(search.toLowerCase()),
             );
@@ -319,11 +293,11 @@ export default function HomePage() {
               >
                 <h1 id={`${categoryId(name)}-title`}>{language.menu[name]}</h1>
                 <div className="menu-grid">
-                  {visibleItems.map(([itemName, price], index) => (
+                  {visibleItems.map(([itemName, price, image]) => (
                     <article className="menu-card" key={itemName}>
                       <img
                         className="menu-image"
-                        src={images[index % images.length]}
+                        src={image}
                         alt={`${itemName} - ${name}`}
                       />
                       <h2>{itemName}</h2>
