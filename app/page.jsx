@@ -290,24 +290,24 @@ export default function HomePage() {
       timestamp: new Date().toISOString(),
     };
 
+    const googleUrl = "https://script.google.com/macros/s/AKfycbwlwceWM7hWTHtqX_Y0R_sfGKvTxYyXGtugtP3LS1mLBKJBKXHZYYyrvJmOe0nxXwuYkw/exec";
+
     try {
-      // 1. Direct post to Google Apps Script (bypasses Netlify serverless restrictions)
-      const googleUrl = "https://script.google.com/macros/s/AKfycbwlwceWM7hWTHtqX_Y0R_sfGKvTxYyXGtugtP3LS1mLBKJBKXHZYYyrvJmOe0nxXwuYkw/exec";
-      await fetch(googleUrl, {
+      const res = await fetch("/api/feedback", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      // 2. Also forward to local/server API endpoint if available
-      try {
-        fetch("/api/feedback", {
+      if (!res.ok) {
+        // Fallback directly to Google Apps Script only if API route failed
+        await fetch(googleUrl, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload),
-        }).catch(() => {});
-      } catch {}
+        });
+      }
 
       setFeedbackStatus("success");
       setFeedbackText("");
@@ -316,7 +316,23 @@ export default function HomePage() {
         setFeedbackStatus("idle");
       }, 2200);
     } catch {
-      setFeedbackStatus("idle");
+      // Network fallback directly to Google Apps Script
+      try {
+        await fetch(googleUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        });
+        setFeedbackStatus("success");
+        setFeedbackText("");
+        setTimeout(() => {
+          setFeedbackOpen(false);
+          setFeedbackStatus("idle");
+        }, 2200);
+      } catch {
+        setFeedbackStatus("idle");
+      }
     }
   };
 
