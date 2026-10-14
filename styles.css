@@ -67,9 +67,36 @@ body {
 [dir="rtl"] .brand-lockup h1,
 [dir="rtl"] .menu-brand,
 [dir="rtl"] .menu-section h1,
+[dir="rtl"] .menu-card h2,
+[dir="rtl"] .category-tab,
+[dir="rtl"] .menu-tab,
 [dir="rtl"] .feedback-panel h2 {
   font-family: "Noto Kufi Arabic", sans-serif;
   font-weight: 700;
+}
+
+[dir="rtl"] .menu-card h2 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+[dir="rtl"] .menu-header .icon-button:first-child svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .feedback-button {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .feedback-button span {
+  margin-right: 0;
+  margin-left: 0.35rem;
+}
+
+[dir="rtl"] .menu-card p span {
+  margin-left: 0;
+  margin-right: 0.25rem;
 }
 
 button {
@@ -453,9 +480,17 @@ button {
 }
 
 .menu-card h2 {
-  margin: 1rem 0 0.35rem;
+  margin: 1rem 0 0.15rem;
   font-size: 1.1rem;
   color: var(--espresso);
+}
+
+.menu-card-en {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.015em;
 }
 
 .menu-card p {

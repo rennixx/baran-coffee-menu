@@ -12,53 +12,78 @@ const categories = [
   {
     name: "Hot Drinks",
     items: [
-      ["Espresso", "3,000", "/menu/hot-espresso.jpg"], ["Double Espresso", "4,000", "/menu/hot-espresso.jpg"],
-      ["Latte", "4,000", "/menu/hot-latte.jpg"], ["Caramel Latte", "4,500"],
-      ["Vanilla Latte", "4,500"], ["Mocha", "4,500"], ["Spanish Latte", "4,500"],
-      ["Cappuccino", "4,000", "/menu/hot-latte.jpg"], ["Americano", "3,500"],
-      ["Hot Chocolate", "4,000"], ["Turkish Coffee", "2,000"], ["Arabic Coffee", "2,000"],
-      ["Chocolate Coffee", "2,000"], ["Qazwan", "2,000"], ["Hazelnut Coffee", "2,000"],
-      ["Cappuccino Powder", "2,000"], ["Nescafe", "1,000"], ["Tea", "500"], ["Double Tea", "1,000"],
+      ["Espresso", "3,000", "/menu/hot-espresso.jpg"],
+      ["Double Espresso", "4,000", "/menu/hot-double-espresso.jpg"],
+      ["Latte", "4,000", "/menu/hot-latte.jpg"],
+      ["Caramel Latte", "4,500", "/menu/hot-caramel-latte.jpg"],
+      ["Vanilla Latte", "4,500", "/menu/hot-vanilla-latte.jpg"],
+      ["Mocha", "4,500", "/menu/hot-mocha.jpg"],
+      ["Spanish Latte", "4,500", "/menu/hot-spanish-latte.jpg"],
+      ["Cappuccino", "4,000", "/menu/hot-drinks.jpg"],
+      ["Americano", "3,500", "/menu/hot-americano.jpg"],
+      ["Hot Chocolate", "4,000", "/menu/hot-chocolate.jpg"],
+      ["Turkish Coffee", "2,000", "/menu/hot-turkish-coffee.jpg"],
+      ["Arabic Coffee", "2,000", "/menu/hot-arabic-coffee.jpg"],
+      ["Chocolate Coffee", "2,000", "/menu/hot-chocolate-coffee.jpg"],
+      ["Qazwan", "2,000", "/menu/hot-qazwan-coffee.jpg"],
+      ["Hazelnut Coffee", "2,000", "/menu/hot-hazelnut-coffee.jpg"],
+      ["Cappuccino Powder", "2,000", "/menu/hot-cappuccino-powder.jpg"],
+      ["Nescafe", "1,000", "/menu/hot-nescafe.jpg"],
+      ["Tea", "500", "/menu/hot-tea.jpg"],
+      ["Double Tea", "1,000", "/menu/hot-tea.jpg"],
     ],
   },
   {
     name: "Cold Drinks",
     items: [
-      ["Iced Latte", "4,500", "/menu/cold-iced-latte.jpg"], ["Iced Caramel Latte", "5,000"],
-      ["Iced Vanilla Latte", "5,000"], ["Iced Coffee", "4,000", "/menu/cold-iced-coffee.jpg"],
-      ["Iced Coffee Caramel", "4,500"], ["Iced Coffee Vanilla", "4,500"],
-      ["Iced Spanish Latte", "4,500"], ["Iced Mocha", "4,500"], ["Iced Americano", "5,000"],
+      ["Iced Latte", "4,500", "/menu/cold-iced-latte.jpg"],
+      ["Iced Caramel Latte", "5,000", "/menu/cold-iced-caramel-latte.jpg"],
+      ["Iced Vanilla Latte", "5,000", "/menu/cold-iced-vanilla-latte.jpg"],
+      ["Iced Coffee", "4,000", "/menu/cold-iced-coffee.jpg"],
+      ["Iced Coffee Caramel", "4,500", "/menu/cold-iced-coffee-caramel.jpg"],
+      ["Iced Coffee Vanilla", "4,500", "/menu/cold-iced-coffee-vanilla.jpg"],
+      ["Iced Spanish Latte", "4,500", "/menu/cold-iced-spanish-latte.jpg"],
+      ["Iced Mocha", "4,500", "/menu/cold-iced-mocha.jpg"],
+      ["Iced Americano", "5,000", "/menu/cold-iced-americano.jpg"],
     ],
   },
   {
     name: "Shakes",
     items: [
-      ["Nutella Shake", "4,000"], ["Chocolate Shake", "3,500", "/menu/shake-chocolate.jpg"],
-      ["Kinder Shake", "5,000"], ["Oreo Shake", "4,000", "/menu/shake-oreo.jpg"],
+      ["Nutella Shake", "4,000", "/menu/shake-nutella.jpg"],
+      ["Chocolate Shake", "3,500", "/menu/shake-chocolate.jpg"],
+      ["Kinder Shake", "5,000", "/menu/shake-kinder.jpg"],
+      ["Oreo Shake", "4,000", "/menu/shake-oreo.jpg"],
       ["Strawberry Shake", "4,000", "/menu/shake-strawberry.jpg"],
-      ["Nutella Banana Milkshake", "5,000"],
+      ["Nutella Banana Milkshake", "5,000", "/menu/shake-nutella-banana.jpg"],
       ["Strawberry Banana Milkshake", "5,000", "/menu/shake-strawberry-banana.jpg"],
     ],
   },
   {
     name: "Mojito",
     items: [
-      ["Classic Mojito", "4,000", "/menu/mojito-classic.jpg"], ["Strawberry Mojito", "4,000", "/menu/mojito-strawberry.jpg"],
-      ["Blueberry Mojito", "4,000", "/menu/mojito-blueberry.jpg"], ["Lemon and Mint", "3,500", "/menu/mojito-lemon-mint.jpg"],
+      ["Classic Mojito", "4,000", "/menu/mojito-classic.jpg"],
+      ["Strawberry Mojito", "4,000", "/menu/mojito-strawberry.jpg"],
+      ["Blueberry Mojito", "4,000", "/menu/mojito-blueberry.jpg"],
+      ["Lemon and Mint", "3,500", "/menu/mojito-lemon-mint.jpg"],
     ],
   },
   {
     name: "Crep",
     items: [
-      ["Crep Nutella", "5,000"], ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
-      ["Crep Pistachio", "6,000"], ["Crep Kinder", "6,000"],
+      ["Crep Nutella", "5,000", "/menu/crep-nutella.jpg"],
+      ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
+      ["Crep Pistachio", "6,000", "/menu/crep-pistachio.jpg"],
+      ["Crep Kinder", "6,000", "/menu/crepes-chocolate.jpg"],
     ],
   },
   {
     name: "Juice",
     items: [
-      ["Orange Juice", "—", "/menu/juice-orange.jpg"], ["Pomegranate Juice", "—", "/menu/juice-pomegranate.jpg"],
-      ["Milk and Banana", "—", "/menu/juice-banana.jpg"], ["Melon Juice", "—", "/menu/juice-melon.jpg"],
+      ["Orange Juice", "—", "/menu/juice-orange.jpg"],
+      ["Pomegranate Juice", "—", "/menu/juice-pomegranate.jpg"],
+      ["Milk and Banana", "—", "/menu/juice-banana.jpg"],
+      ["Melon Juice", "—", "/menu/juice-melon.jpg"],
       ["Cocktail", "—", "/menu/juice-cocktail.jpg"],
     ],
   },
@@ -66,65 +91,140 @@ const categories = [
 
 const translations = {
   en: {
+    pageTitle: "Baran Coffee | Menu",
     brandType: "C O F F E E  ·  C A F E",
     tagline: "A SIMPLE MENU FOR YOUR DAILY RITUAL",
     allMenu: "ALL MENU",
     drinks: "DRINKS",
     bakery: "FOOD",
-    search: "Search menu",
+    search: "Search menu...",
     feedback: "Feedback",
     feedbackTitle: "How was your visit?",
     feedbackDescription: "Tell us what would make your next coffee better.",
-    feedbackPlaceholder: "Your feedback",
+    feedbackPlaceholder: "Your feedback or suggestions...",
     sendFeedback: "Send feedback",
+    closeFeedback: "Close feedback",
     noItems: "No menu items found.",
     back: "Go back",
     openSearch: "Open search",
+    currency: "IQD",
+    photoComingSoon: "Photo coming soon",
     menu: {
-      "Hot Drinks": "Hot Drinks", "Cold Drinks": "Cold Drinks", Shakes: "Shakes",
-      Mojito: "Mojito", Crep: "Crepes", Juice: "Juice",
+      "Hot Drinks": "Hot Drinks",
+      "Cold Drinks": "Cold Drinks",
+      Shakes: "Shakes",
+      Mojito: "Mojito",
+      Crep: "Crepes",
+      Juice: "Fresh Juices",
     },
   },
   ar: {
-    brandType: "قهوة  ·  مقهى",
-    tagline: "قائمة بسيطة لطقوسك اليومية",
-    allMenu: "كل القائمة",
+    pageTitle: "باران كافيه | القائمة",
+    brandType: "قـهـوة  ·  كـافـيـه",
+    tagline: "قائمة مميزة لطقوس قهوتك اليومية",
+    allMenu: "القائمة الكاملة",
     drinks: "المشروبات",
-    bakery: "المأكولات",
-    search: "ابحث في القائمة",
-    feedback: "ملاحظات",
-    feedbackTitle: "كيف كانت زيارتك؟",
-    feedbackDescription: "أخبرنا بما يجعل قهوتك القادمة أفضل.",
-    feedbackPlaceholder: "اكتب ملاحظاتك",
+    bakery: "الحلويات والمأكولات",
+    search: "ابحث في القائمة...",
+    feedback: "رأيك يهمنا",
+    feedbackTitle: "كيف كانت تجربتك اليوم؟",
+    feedbackDescription: "شاركنا ملاحظاتك أو اقتراحاتك لنقدم لك أفضل تجربة قهوة دائماً.",
+    feedbackPlaceholder: "اكتب رأيك أو مقترحاتك هنا...",
     sendFeedback: "إرسال الملاحظات",
-    noItems: "لم يتم العثور على أصناف.",
+    closeFeedback: "إغلاق",
+    noItems: "لم يتم العثور على أي صنف مطابق للبحث.",
     back: "رجوع",
     openSearch: "فتح البحث",
+    currency: "د.ع",
+    photoComingSoon: "الصورة قريباً",
     menu: {
-      "Hot Drinks": "مشروبات ساخنة", "Cold Drinks": "مشروبات باردة", Shakes: "شيك",
-      Mojito: "موهيتو", Crep: "كريب", Juice: "عصائر",
+      "Hot Drinks": "مشروبات ساخنة",
+      "Cold Drinks": "مشروبات باردة",
+      Shakes: "ميلك شيك",
+      Mojito: "موهيتو",
+      Crep: "كريب",
+      Juice: "عصائر طبيعية",
     },
   },
   ku: {
-    brandType: "قاوە  ·  کافێ",
-    tagline: "لیستێکی سادە بۆ ڕۆژانەکەت",
-    allMenu: "هەموو لیستەکە",
+    pageTitle: "باران کافێ | مێنوو",
+    brandType: "قـاوە  ·  کـافـێ",
+    tagline: "مێنویەکی تایبەت بۆ ساتەکانی قاوەی ڕۆژانەت",
+    allMenu: "تەواوی مێنوو",
     drinks: "خواردنەوەکان",
-    bakery: "خواردن",
-    search: "گەڕان لە لیستەکە",
-    feedback: "تێبینی",
+    bakery: "شیرینی و خواردن",
+    search: "گەڕان لە مێنوودا...",
+    feedback: "ڕاو سەرنج",
     feedbackTitle: "سەردانەکەت چۆن بوو؟",
-    feedbackDescription: "پێمان بڵێ چ شتێک قاوەی داهاتووت باشتر دەکات.",
-    feedbackPlaceholder: "تێبینیت بنووسە",
-    sendFeedback: "ناردنی تێبینی",
-    noItems: "هیچ دانەیەک نەدۆزرایەوە.",
+    feedbackDescription: "بۆچوون و پێشنیارەکانت گرنگن بۆ ئەوەی خزمەتگوزارییەکانمان باشتر بکەین.",
+    feedbackPlaceholder: "ڕا و سەرنجەکانت لێرە بنووسە...",
+    sendFeedback: "ناردنی بۆچوون",
+    closeFeedback: "داخستن",
+    noItems: "هیچ بڕگەیەک لە مێنوودا نەدۆزرایەوە.",
     back: "گەڕانەوە",
     openSearch: "کردنەوەی گەڕان",
+    currency: "د.ع",
+    photoComingSoon: "وێنە بەم زووانە",
     menu: {
-      "Hot Drinks": "خواردنەوە گەرمەکان", "Cold Drinks": "خواردنەوە ساردەکان",
-      Shakes: "شەیک", Mojito: "مۆجیتۆ", Crep: "کرێپ", Juice: "شەربەت",
+      "Hot Drinks": "خواردنەوە گەرمەکان",
+      "Cold Drinks": "خواردنەوە ساردەکان",
+      Shakes: "شەیکەکان",
+      Mojito: "مۆهیتۆ",
+      Crep: "کرێپ",
+      Juice: "شەربەتی سروشتی",
     },
   },
+};
+
+const itemTranslations = {
+  "Espresso": { ar: "إسبريسو", ku: "ئێسپرێسۆ" },
+  "Double Espresso": { ar: "دبل إسبريسو", ku: "دەبڵ ئێسپرێسۆ" },
+  "Latte": { ar: "لاتيه", ku: "لاتێ" },
+  "Caramel Latte": { ar: "كراميل لاتيه", ku: "کارامێل لاتێ" },
+  "Vanilla Latte": { ar: "فانيلا لاتيه", ku: "ڤانیلا لاتێ" },
+  "Mocha": { ar: "موكا", ku: "مۆکا" },
+  "Spanish Latte": { ar: "سبانش لاتيه", ku: "سپانیش لاتێ" },
+  "Cappuccino": { ar: "كابتشينو", ku: "کاپوچینۆ" },
+  "Americano": { ar: "أمريكانو", ku: "ئەمریکانۆ" },
+  "Hot Chocolate": { ar: "شوكولاتة ساخنة", ku: "چۆکڵێتی گەرم" },
+  "Turkish Coffee": { ar: "قهوة تركية", ku: "قاوەی تورکی" },
+  "Arabic Coffee": { ar: "قهوة عربية", ku: "قاوەی عەرەبی" },
+  "Chocolate Coffee": { ar: "قهوة بالشوكولاتة", ku: "قاوە بە چۆکڵێت" },
+  "Qazwan": { ar: "قهوة قزوان (بطم)", ku: "قاوەی قەزوان" },
+  "Hazelnut Coffee": { ar: "قهوة بالبندق", ku: "قاوەی بوندق" },
+  "Cappuccino Powder": { ar: "كابتشينو بودرة", ku: "کاپوچینۆ پاودەر" },
+  "Nescafe": { ar: "نسكافيه", ku: "نێسکافێ" },
+  "Tea": { ar: "شاي", ku: "چای" },
+  "Double Tea": { ar: "دبل شاي", ku: "دەبڵ چای" },
+  "Iced Latte": { ar: "آيس لاتيه", ku: "ئایس لاتێ" },
+  "Iced Caramel Latte": { ar: "آيس كراميل لاتيه", ku: "ئایس کارامێل لاتێ" },
+  "Iced Vanilla Latte": { ar: "آيس فانيلا لاتيه", ku: "ئایس ڤانیلا لاتێ" },
+  "Iced Coffee": { ar: "آيس كوفي", ku: "ئایس کۆفی" },
+  "Iced Coffee Caramel": { ar: "آيس كوفي كراميل", ku: "ئایس کۆفی کارامێل" },
+  "Iced Coffee Vanilla": { ar: "آيس كوفي فانيلا", ku: "ئایس کۆفی ڤانیلا" },
+  "Iced Spanish Latte": { ar: "آيس سبانش لاتيه", ku: "ئایس سپانیش لاتێ" },
+  "Iced Mocha": { ar: "آيس موكا", ku: "ئایس مۆکا" },
+  "Iced Americano": { ar: "آيس أمريكانو", ku: "ئایس ئەمریکانۆ" },
+  "Nutella Shake": { ar: "ميلك شيك نوتيلا", ku: "شەیکی نۆتێلا" },
+  "Chocolate Shake": { ar: "ميلك شيك شوكولاتة", ku: "شەیکی چۆکڵێت" },
+  "Kinder Shake": { ar: "ميلك شيك كيندر", ku: "شەیکی کیندەر" },
+  "Oreo Shake": { ar: "ميلك شيك أوريو", ku: "شەیکی ئۆریۆ" },
+  "Strawberry Shake": { ar: "ميلك شيك فراولة", ku: "شەیکی شلیک" },
+  "Nutella Banana Milkshake": { ar: "ميلك شيك نوتيلا وموز", ku: "شەیکی نۆتێلا و مۆز" },
+  "Strawberry Banana Milkshake": { ar: "ميلك شيك فراولة وموز", ku: "شەیکی شلیک و مۆز" },
+  "Classic Mojito": { ar: "موهيتو كلاسيك", ku: "مۆهیتۆی کلاسیک" },
+  "Strawberry Mojito": { ar: "موهيتو فراولة", ku: "مۆهیتۆی شلیک" },
+  "Blueberry Mojito": { ar: "موهيتو توت أزرق", ku: "مۆهیتۆی بلوبێری" },
+  "Lemon and Mint": { ar: "ليمون ونعناع", ku: "لیمۆ و نەعنا" },
+  "Crep Nutella": { ar: "كريب نوتيلا", ku: "کرێپی نۆتێلا" },
+  "Crep Fruits": { ar: "كريب فواكه", ku: "کرێپی میوە" },
+  "Crep Pistachio": { ar: "كريب فستق (بستاشيو)", ku: "کرێپی فستق" },
+  "Crep Kinder": { ar: "كريب كيندر", ku: "کرێپی کیندەر" },
+  "Orange Juice": { ar: "عصير برتقال طازج", ku: "شەربەتی پرتەقاڵ" },
+  "Pomegranate Juice": { ar: "عصير رمان طازج", ku: "شەربەتی هەنار" },
+  "Milk and Banana": { ar: "حليب بالموز", ku: "شیر و مۆز" },
+  "Melon Juice": { ar: "عصير بطيخ أصفر", ku: "شەربەتی کاڵەک" },
+  "Cocktail": { ar: "كوكتيل فواكه طازجة", ku: "شەربەتی کۆکتێل" },
 };
 
 function GlobeIcon() {
@@ -169,7 +269,8 @@ export default function HomePage() {
   useEffect(() => {
     document.documentElement.lang = selectedLanguage || "en";
     document.documentElement.dir = isRtl ? "rtl" : "ltr";
-  }, [selectedLanguage, isRtl]);
+    document.title = language.pageTitle || "Baran Coffee | Menu";
+  }, [selectedLanguage, isRtl, language.pageTitle]);
 
   useEffect(() => {
     if (!selectedLanguage) return undefined;
@@ -275,9 +376,14 @@ export default function HomePage() {
 
         <div className="menu-content">
           {categories.map(({ name, items }) => {
-            const visibleItems = items.filter(([itemName]) =>
-              itemName.toLowerCase().includes(search.toLowerCase()),
-            );
+            const query = search.trim().toLowerCase();
+            const visibleItems = items.filter(([itemName]) => {
+              if (!query) return true;
+              const enName = itemName.toLowerCase();
+              const arName = itemTranslations[itemName]?.ar?.toLowerCase() || "";
+              const kuName = itemTranslations[itemName]?.ku?.toLowerCase() || "";
+              return enName.includes(query) || arName.includes(query) || kuName.includes(query);
+            });
 
             return (
               <section
@@ -289,19 +395,31 @@ export default function HomePage() {
               >
                 <h1 id={`${categoryId(name)}-title`}>{language.menu[name]}</h1>
                 <div className="menu-grid">
-                  {visibleItems.map(([itemName, price, image]) => (
-                    <article className="menu-card" key={itemName}>
-                      {image ? (
-                        <img className="menu-image" src={image} alt={`${itemName} - ${name}`} />
-                      ) : (
-                        <div className="menu-image-missing" role="img" aria-label={`${itemName} photo not available`}>
-                          Photo coming soon
-                        </div>
-                      )}
-                      <h2>{itemName}</h2>
-                      <p>{price} <span>IQD</span></p>
-                    </article>
-                  ))}
+                  {visibleItems.map(([itemName, price, image]) => {
+                    const localizedName =
+                      selectedLanguage && selectedLanguage !== "en" && itemTranslations[itemName]?.[selectedLanguage]
+                        ? itemTranslations[itemName][selectedLanguage]
+                        : itemName;
+
+                    return (
+                      <article className="menu-card" key={itemName}>
+                        {image ? (
+                          <img className="menu-image" src={image} alt={`${localizedName} - ${language.menu[name]}`} />
+                        ) : (
+                          <div className="menu-image-missing" role="img" aria-label={`${localizedName} photo not available`}>
+                            {language.photoComingSoon}
+                          </div>
+                        )}
+                        <h2>{localizedName}</h2>
+                        {selectedLanguage && selectedLanguage !== "en" && (
+                          <p className="menu-card-en">{itemName}</p>
+                        )}
+                        <p className="menu-card-price">
+                          {price} {price !== "—" && <span>{language.currency}</span>}
+                        </p>
+                      </article>
+                    );
+                  })}
                 </div>
                 {visibleItems.length === 0 && <p className="empty-state">{language.noItems}</p>}
               </section>
@@ -314,7 +432,7 @@ export default function HomePage() {
         {feedbackOpen && (
           <div className="feedback-backdrop" role="presentation" onClick={() => setFeedbackOpen(false)}>
             <form className="feedback-panel" onSubmit={(event) => { event.preventDefault(); setFeedbackOpen(false); }} onClick={(event) => event.stopPropagation()}>
-              <button className="feedback-close" type="button" onClick={() => setFeedbackOpen(false)} aria-label="Close feedback">×</button>
+              <button className="feedback-close" type="button" onClick={() => setFeedbackOpen(false)} aria-label={language.closeFeedback}>×</button>
               <h2>{language.feedbackTitle}</h2>
               <p>{language.feedbackDescription}</p>
               <textarea placeholder={language.feedbackPlaceholder} aria-label={language.feedbackPlaceholder} />
