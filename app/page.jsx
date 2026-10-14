@@ -309,7 +309,7 @@ export default function HomePage() {
               <BackIcon />
             </button>
             <button className="menu-brand" type="button" onClick={() => scrollToCategory("Hot Drinks")}>
-              <img className="menu-brand-logo" src="/baran-coffee-logo.jpg" alt="" aria-hidden="true" />
+              <img className="menu-brand-logo" src="/baran-coffee-logo.png" alt="" aria-hidden="true" />
               <span>BARAN COFFEE</span>
             </button>
             <button className="icon-button" type="button" onClick={() => setSearchOpen((open) => !open)} aria-label={language.openSearch}>
@@ -465,7 +465,7 @@ export default function HomePage() {
         <div className="landing-video-wash" aria-hidden="true" />
         <section className="language-screen" aria-labelledby="page-title">
           <div className="brand-lockup" aria-label="Baran Coffee">
-            <img className="brand-mark" src="/baran-coffee-logo.jpg" alt="" aria-hidden="true" />
+            <img className="brand-mark" src="/baran-coffee-logo.png" alt="" aria-hidden="true" />
             <div>
               <h1 id="page-title">Baran Coffee</h1>
               <p>{language.brandType}</p>
