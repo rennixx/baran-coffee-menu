@@ -283,25 +283,38 @@ export default function HomePage() {
     e.preventDefault();
     if (!feedbackText.trim() || feedbackStatus === "submitting") return;
     setFeedbackStatus("submitting");
+
+    const payload = {
+      feedback: feedbackText.trim(),
+      language: selectedLanguage || "en",
+      timestamp: new Date().toISOString(),
+    };
+
     try {
-      const res = await fetch("/api/feedback", {
+      // 1. Direct post to Google Apps Script (bypasses Netlify serverless restrictions)
+      const googleUrl = "https://script.google.com/macros/s/AKfycbwlwceWM7hWTHtqX_Y0R_sfGKvTxYyXGtugtP3LS1mLBKJBKXHZYYyrvJmOe0nxXwuYkw/exec";
+      await fetch(googleUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          feedback: feedbackText,
-          language: selectedLanguage || "en",
-        }),
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
       });
-      if (res.ok) {
-        setFeedbackStatus("success");
-        setFeedbackText("");
-        setTimeout(() => {
-          setFeedbackOpen(false);
-          setFeedbackStatus("idle");
-        }, 2200);
-      } else {
+
+      // 2. Also forward to local/server API endpoint if available
+      try {
+        fetch("/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }).catch(() => {});
+      } catch {}
+
+      setFeedbackStatus("success");
+      setFeedbackText("");
+      setTimeout(() => {
+        setFeedbackOpen(false);
         setFeedbackStatus("idle");
-      }
+      }, 2200);
     } catch {
       setFeedbackStatus("idle");
     }

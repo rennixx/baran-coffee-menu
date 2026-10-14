@@ -21,7 +21,9 @@ export async function POST(request) {
     };
 
     // 1. If Google Sheets Webhook URL is configured, forward to Google Sheets
-    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    const webhookUrl =
+      process.env.GOOGLE_SHEETS_WEBHOOK_URL ||
+      "https://script.google.com/macros/s/AKfycbwlwceWM7hWTHtqX_Y0R_sfGKvTxYyXGtugtP3LS1mLBKJBKXHZYYyrvJmOe0nxXwuYkw/exec";
     if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
