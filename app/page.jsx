@@ -104,6 +104,8 @@ const translations = {
     feedbackPlaceholder: "Your feedback or suggestions...",
     sendFeedback: "Send feedback",
     closeFeedback: "Close feedback",
+    feedbackSuccess: "Thank you! Your feedback has been received.",
+    feedbackSending: "Sending...",
     noItems: "No menu items found.",
     back: "Go back",
     openSearch: "Open search",
@@ -132,6 +134,8 @@ const translations = {
     feedbackPlaceholder: "اكتب رأيك أو مقترحاتك هنا...",
     sendFeedback: "إرسال الملاحظات",
     closeFeedback: "إغلاق",
+    feedbackSuccess: "شكراً لك! تم استلام ملاحظاتك بنجاح.",
+    feedbackSending: "جارٍ الإرسال...",
     noItems: "لم يتم العثور على أي صنف مطابق للبحث.",
     back: "رجوع",
     openSearch: "فتح البحث",
@@ -160,6 +164,8 @@ const translations = {
     feedbackPlaceholder: "ڕا و سەرنجەکانت لێرە بنووسە...",
     sendFeedback: "ناردنی بۆچوون",
     closeFeedback: "داخستن",
+    feedbackSuccess: "زۆر سوپاس! سەرنج و بۆچوونەکەت بە سەرکەوتوویی گەیشت.",
+    feedbackSending: "لە ناردندایە...",
     noItems: "هیچ بڕگەیەک لە مێنوودا نەدۆزرایەوە.",
     back: "گەڕانەوە",
     openSearch: "کردنەوەی گەڕان",
@@ -263,8 +269,43 @@ export default function HomePage() {
   const [search, setSearch] = useState("");
   const [activeSection, setActiveSection] = useState("Drinks");
   const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [feedbackText, setFeedbackText] = useState("");
+  const [feedbackStatus, setFeedbackStatus] = useState("idle");
   const language = translations[selectedLanguage] ?? translations.en;
   const isRtl = selectedLanguage === "ar" || selectedLanguage === "ku";
+
+  const closeFeedbackModal = () => {
+    setFeedbackOpen(false);
+    setFeedbackStatus("idle");
+  };
+
+  const handleFeedbackSubmit = async (e) => {
+    e.preventDefault();
+    if (!feedbackText.trim() || feedbackStatus === "submitting") return;
+    setFeedbackStatus("submitting");
+    try {
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          feedback: feedbackText,
+          language: selectedLanguage || "en",
+        }),
+      });
+      if (res.ok) {
+        setFeedbackStatus("success");
+        setFeedbackText("");
+        setTimeout(() => {
+          setFeedbackOpen(false);
+          setFeedbackStatus("idle");
+        }, 2200);
+      } else {
+        setFeedbackStatus("idle");
+      }
+    } catch {
+      setFeedbackStatus("idle");
+    }
+  };
 
   useEffect(() => {
     document.documentElement.lang = selectedLanguage || "en";
@@ -427,16 +468,52 @@ export default function HomePage() {
           })}
         </div>
         <button className="feedback-button" type="button" onClick={() => setFeedbackOpen(true)}>
-          <span aria-hidden="true">▢</span> {language.feedback}
+          <ChatIcon />
+          <span>{language.feedback}</span>
         </button>
         {feedbackOpen && (
-          <div className="feedback-backdrop" role="presentation" onClick={() => setFeedbackOpen(false)}>
-            <form className="feedback-panel" onSubmit={(event) => { event.preventDefault(); setFeedbackOpen(false); }} onClick={(event) => event.stopPropagation()}>
-              <button className="feedback-close" type="button" onClick={() => setFeedbackOpen(false)} aria-label={language.closeFeedback}>×</button>
-              <h2>{language.feedbackTitle}</h2>
-              <p>{language.feedbackDescription}</p>
-              <textarea placeholder={language.feedbackPlaceholder} aria-label={language.feedbackPlaceholder} />
-              <button className="feedback-submit" type="submit">{language.sendFeedback}</button>
+          <div className="feedback-backdrop" role="presentation" onClick={closeFeedbackModal}>
+            <form className="feedback-panel" onSubmit={handleFeedbackSubmit} onClick={(event) => event.stopPropagation()}>
+              <button className="feedback-close" type="button" onClick={closeFeedbackModal} aria-label={language.closeFeedback}>
+                <CloseIcon />
+              </button>
+              {feedbackStatus === "success" ? (
+                <div className="feedback-success">
+                  <div className="feedback-success-icon">
+                    <CheckIcon />
+                  </div>
+                  <h2>{language.feedbackSuccess}</h2>
+                </div>
+              ) : (
+                <>
+                  <div className="feedback-header">
+                    <div className="feedback-badge">
+                      <ChatIcon />
+                    </div>
+                    <div>
+                      <h2>{language.feedbackTitle}</h2>
+                      <p>{language.feedbackDescription}</p>
+                    </div>
+                  </div>
+                  <textarea
+                    autoFocus
+                    required
+                    rows={4}
+                    value={feedbackText}
+                    onChange={(e) => setFeedbackText(e.target.value)}
+                    placeholder={language.feedbackPlaceholder}
+                    aria-label={language.feedbackPlaceholder}
+                    disabled={feedbackStatus === "submitting"}
+                  />
+                  <button
+                    className="feedback-submit"
+                    type="submit"
+                    disabled={feedbackStatus === "submitting" || !feedbackText.trim()}
+                  >
+                    {feedbackStatus === "submitting" ? language.feedbackSending : language.sendFeedback}
+                  </button>
+                </>
+              )}
             </form>
           </div>
         )}
@@ -515,4 +592,28 @@ function BackIcon() {
 
 function SearchIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7.5" /><path d="m17 17 5 5" /></svg>;
+}
+
+function ChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
 }
