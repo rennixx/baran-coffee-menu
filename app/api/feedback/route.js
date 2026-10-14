@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -26,6 +28,7 @@ export async function POST(request) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(entry),
+          redirect: "follow",
         });
       } catch (webhookErr) {
         console.error("Failed to forward to Google Sheets webhook:", webhookErr);
@@ -59,3 +62,4 @@ export async function POST(request) {
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
+
