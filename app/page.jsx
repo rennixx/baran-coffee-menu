@@ -19,7 +19,7 @@ const categories = [
       ["Vanilla Latte", "4,500", "/menu/hot-vanilla-latte.jpg"],
       ["Mocha", "4,500", "/menu/hot-mocha.jpg"],
       ["Spanish Latte", "4,500", "/menu/hot-spanish-latte.jpg"],
-      ["Cappuccino", "4,000", "/menu/hot-drinks.jpg"],
+      ["Cappuccino", "4,000", "/menu/hot-cappuccino.jpg"],
       ["Americano", "3,500", "/menu/hot-americano.jpg"],
       ["Hot Chocolate", "4,000", "/menu/hot-chocolate.jpg"],
       ["Turkish Coffee", "2,000", "/menu/hot-turkish-coffee.jpg"],
