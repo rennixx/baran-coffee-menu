@@ -72,9 +72,9 @@ const categories = [
     name: "Crep",
     items: [
       ["Crep Nutella", "5,000", "/menu/crep-nutella.jpg"],
-      ["Crep Fruits", "6,000", "/menu/crepes-berries.jpg"],
+      ["Crep Fruits", "6,000", "/menu/crep-fruits.jpg"],
       ["Crep Pistachio", "6,000", "/menu/crep-pistachio.jpg"],
-      ["Crep Kinder", "6,000", "/menu/crepes-chocolate.jpg"],
+      ["Crep Kinder", "6,000", "/menu/crep-kinder.jpg"],
     ],
   },
   {
